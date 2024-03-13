@@ -106,7 +106,9 @@ document.getElementById("height").addEventListener("change", (_e) => {
 });
 
 document.getElementById("favcolor").addEventListener("change", (_e) => {
-  cylinder.material.color.set(document.getElementById("favcolor").value);
+  cylinder.material.map = null;
+  cylinder.material.color = new THREE.Color(document.getElementById("favcolor").value);
+  cylinder.material.needsUpdate = true;
 });
 
 // Function to render the scene
