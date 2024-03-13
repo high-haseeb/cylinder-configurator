@@ -1,20 +1,29 @@
-/* body{ */
-/*   height: 100vh; */
-/*   width: 100vw; */
-/*   background-color: black; */
-/* } */
-/* canvas { */
-/*   width:  100%; */
-/*   height: 100%; */
-/* } */
+/* Reset default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex{
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-col{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
 body {
   font-family: monospace;
   font-size: 16px;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
-canvas{
+
+canvas {
+  display: block;
   margin: 0;
   padding: 0;
 }
@@ -37,16 +46,17 @@ canvas{
 /* Styling for range input (slider) */
 input[type="range"] {
   -webkit-appearance: none; /* Removes default styling */
+  appearance: none;
   height: 10px; /* Set height of slider */
   background-color: #ddd; /* Background color of slider track */
   border-radius: 5px; /* Rounded corners */
   outline: none; /* Removes outline */
-  /* margin-bottom: 10px; /* Add some spacing between sliders */ */
 }
 
 /* Styling for slider thumb (handle) */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Removes default styling */
+  appearance: none;
   width: 20px; /* Set width of thumb */
   height: 20px; /* Set height of thumb */
   background-color: #4CAF50; /* Color of thumb */
@@ -63,23 +73,7 @@ input[type="color"] {
   cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-#cylinderForm{
-  position: absolute;
-  top: 50%;
-  left: 10%;
-}
-
-.flex{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.flex-col{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* Improved custom file upload styling */
 .custom-file-upload {
   position: relative;
   display: inline-block;
@@ -90,6 +84,7 @@ input[type="color"] {
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 .custom-file-upload span {
@@ -104,4 +99,10 @@ input[type="color"] {
   height: 100%;
   opacity: 0;
   cursor: pointer;
+}
+
+#cylinderForm{
+  position: absolute;
+  top: 50%;
+  left: 10%;
 }
