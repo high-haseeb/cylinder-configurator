@@ -1,0 +1,107 @@
+/* body{ */
+/*   height: 100vh; */
+/*   width: 100vw; */
+/*   background-color: black; */
+/* } */
+/* canvas { */
+/*   width:  100%; */
+/*   height: 100%; */
+/* } */
+body {
+  font-family: monospace;
+  font-size: 16px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+canvas{
+  margin: 0;
+  padding: 0;
+}
+
+.dim {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: monospace;
+  font-size: 12px;
+  width: 40px;
+  height: 16px;
+  text-align: center;
+  border: none;
+  background: white;
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+
+/* Styling for range input (slider) */
+input[type="range"] {
+  -webkit-appearance: none; /* Removes default styling */
+  height: 10px; /* Set height of slider */
+  background-color: #ddd; /* Background color of slider track */
+  border-radius: 5px; /* Rounded corners */
+  outline: none; /* Removes outline */
+  /* margin-bottom: 10px; /* Add some spacing between sliders */ */
+}
+
+/* Styling for slider thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Removes default styling */
+  width: 20px; /* Set width of thumb */
+  height: 20px; /* Set height of thumb */
+  background-color: #4CAF50; /* Color of thumb */
+  border-radius: 50%; /* Makes thumb circular */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for color input */
+input[type="color"] {
+  width: 50px; /* Set width of color input */
+  height: 25px; /* Set height of color input */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+#cylinderForm{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+  background-color: #181818;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.custom-file-upload span {
+  display: block;
+}
+
+.custom-file-upload input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
