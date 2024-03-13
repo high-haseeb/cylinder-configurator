@@ -53,16 +53,16 @@ input[type="range"] {
   outline: none; /* Removes outline */
 }
 
-/* Styling for slider thumb (handle) */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Removes default styling */
-  appearance: none;
-  width: 20px; /* Set width of thumb */
-  height: 20px; /* Set height of thumb */
-  background-color: #4CAF50; /* Color of thumb */
-  border-radius: 50%; /* Makes thumb circular */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
+/* /* Styling for slider thumb (handle) */ */
+/* input[type="range"]::-webkit-slider-thumb { */
+/*   -webkit-appearance: none; /* Removes default styling */ */
+/*   appearance: none; */
+/*   width: 20px; /* Set width of thumb */ */
+/*   height: 20px; /* Set height of thumb */ */
+/*   background-color: #4CAF50; /* Color of thumb */ */
+/*   border-radius: 50%; /* Makes thumb circular */ */
+/*   cursor: pointer; /* Change cursor to pointer on hover */ */
+/* } */
 
 /* Styling for color input */
 input[type="color"] {
