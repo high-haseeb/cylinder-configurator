@@ -106,3 +106,16 @@ input[type="color"] {
   top: 50%;
   left: 10%;
 }
+#submitBtn{
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  background-color: #181818;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden; /* Ensures content doesn't overflow */
+}

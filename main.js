@@ -72,8 +72,11 @@ function springAnimation(end, setFunction = (e) => console.log("please give a se
   animate();
 }
 
-document.getElementById("radius").addEventListener("change", (_e) => {
-  radius = document.getElementById("radius").value;
+document.getElementById("submitBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  const radius = parseFloat(document.getElementById("radius").value);
+  const height = parseFloat(document.getElementById("height").value);
+
   springAnimation(radius, (e) => {
     cylinder.scale.setX(e);
     cylinder.scale.setZ(e);
@@ -85,12 +88,8 @@ document.getElementById("radius").addEventListener("change", (_e) => {
       new THREE.Vector3(e, heightDim_from.y * height, heightDim_from.z),
       new THREE.Vector3(e, heightDim_to.y * height, heightDim_to.z),
     );
-    // box.update()
   });
-});
 
-document.getElementById("height").addEventListener("change", (_e) => {
-  height = document.getElementById("height").value;
   springAnimation(height, (e) => {
     cylinder.scale.setY(e);
     heightDim.updatePos(
@@ -101,7 +100,6 @@ document.getElementById("height").addEventListener("change", (_e) => {
       new THREE.Vector3(radiusDim_from.x * radius, e / 2, radiusDim_from.z * radius),
       new THREE.Vector3(radiusDim_to.x * radius, e / 2, radiusDim_to.z * radius),
     );
-    // box.update();
   });
 });
 
