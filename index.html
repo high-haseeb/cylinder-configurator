@@ -7,27 +7,33 @@
     <link rel="stylesheet" href="./style.css"></link>
   </head>
   <body>
-    <form id="cylinderForm">
-      <label for="radius">Radius:</label>
-      <input type="number" id="radius" name="radius" min="0.1" max="5" step="0.1" value="1" /><br /><br />
-      <label for="height">Height:</label>
-      <input type="number" id="height" name="height" min="0.1" max="10" step="0.1" value="1" /><br /><br />
-      <button type="button" id="submitBtn">Submit</button>
-  
-      <div class="flex-col">
+    <div class="form-container">
+      <form id="cylinderForm">
         <div class="flex">
-          <input type="color" id="favcolor" name="favcolor" value="#FFA500" />
-          <label for="transparent">Transparent:</label>
-          <input type="checkbox" id="transparent" name="transparent"/>
+        <label for="radius">Radius:</label>
+        <input type="number" id="radius" name="radius" min="0.1" max="5" step="0.1" value="1" /><br /><br />
+          </div>
+        <div class="flex">
+        <label for="height">Height:</label>
+        <input type="number" id="height" name="height" min="0.1" max="10" step="0.1" value="1" /><br /><br />
         </div>
-        <div>
-          <label for="fileUpload" class="custom-file-upload">
-            <span>Upload Texture</span>
-            <input type="file" id="textureInput" name="fileUpload">
-          </label>
+        <button type="button" id="submitBtn" class="button">Submit</button>
+        <div class="flex-col">
+          <div class="flex">
+            <input type="color" id="favcolor" name="favcolor" value="#FFA500" />
+            <label for="transparent">Transparent:</label>
+            <input type="checkbox" id="transparent" name="transparent"/>
+          </div>
+          <div class="flex">
+            <label for="fileUpload" class="custom-file-upload">
+              <span>Upload Texture</span>
+              <input type="file" id="textureInput" name="fileUpload" class="">
+            </label>
+            <!-- <button type="button" id="axisBtn" class="button">Toggle Axis</button> -->
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+  </div>
 
     <script type="importmap">
       {

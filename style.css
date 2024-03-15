@@ -5,27 +5,97 @@
   padding: 0;
 }
 
-.flex{
-  display: flex;
-  gap: 1rem;
+/* Body styles */
+body {
+  font-family: monospace, sans-serif;
+  background-color: #f0f0f0;
 }
 
-.flex-col{
+/* Form container styles */
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 10%; /* Adjust as needed */
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+  padding: 20px;
+}
+
+/* Label styles */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input styles */
+input[type="number"],
+input[type="color"],
+input[type="file"],
+button {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input[type="number"],
+input[type="color"],
+input[type="file"] {
+  width: calc(50% - 6px);
+}
+
+input[type="checkbox"] {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+/* Button styles */
+.button {
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Custom file upload */
+.custom-file-upload {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  font-size: 100px;
+  cursor: pointer;
+}
+
+/* Flex container */
+.flex-col {
   display: flex;
-  gap: 1rem;
   flex-direction: column;
 }
 
-body {
-  font-family: monospace;
-  font-size: 16px;
-  overflow: hidden;
-}
-
-canvas {
-  display: block;
-  margin: 0;
-  padding: 0;
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .dim {
@@ -42,80 +112,7 @@ canvas {
   border-radius: 2px;
   padding: 1px 2px;
 }
-
-/* Styling for range input (slider) */
-input[type="range"] {
-  -webkit-appearance: none; /* Removes default styling */
-  appearance: none;
-  height: 10px; /* Set height of slider */
-  background-color: #ddd; /* Background color of slider track */
-  border-radius: 5px; /* Rounded corners */
-  outline: none; /* Removes outline */
-}
-
-/* /* Styling for slider thumb (handle) */ */
-/* input[type="range"]::-webkit-slider-thumb { */
-/*   -webkit-appearance: none; /* Removes default styling */ */
-/*   appearance: none; */
-/*   width: 20px; /* Set width of thumb */ */
-/*   height: 20px; /* Set height of thumb */ */
-/*   background-color: #4CAF50; /* Color of thumb */ */
-/*   border-radius: 50%; /* Makes thumb circular */ */
-/*   cursor: pointer; /* Change cursor to pointer on hover */ */
-/* } */
-
-/* Styling for color input */
-input[type="color"] {
-  width: 50px; /* Set width of color input */
-  height: 25px; /* Set height of color input */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-/* Improved custom file upload styling */
-.custom-file-upload {
-  position: relative;
-  display: inline-block;
-  background-color: #181818;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  overflow: hidden; /* Ensures content doesn't overflow */
-}
-
-.custom-file-upload span {
-  display: block;
-}
-
-.custom-file-upload input[type="file"] {
-  position: absolute;
-  top: 0;
-  left: 0;
+.submitBtn{
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-#cylinderForm{
-  position: absolute;
-  top: 50%;
-  left: 10%;
-}
-#submitBtn{
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-  background-color: #181818;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  overflow: hidden; /* Ensures content doesn't overflow */
+  background-color: pink;
 }
