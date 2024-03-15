@@ -14,7 +14,7 @@ let composer;
 let scene, camera, renderer, cylinder, controls;
 let textureCube, radiusDim, heightDim;
 let radiusNode, heightNode;
-let radius = (height = 1.2);
+let radius = height = 1;
 
 // let box;
 
@@ -140,6 +140,18 @@ scene = new THREE.Scene();
 scene.background = new THREE.Color("white");
 lighting();
 
+const Axes = () => {
+  const dirs = [new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1)]
+  const origin = new THREE.Vector3(-1.4 * radius, -height/2, -1.4 * radius);
+  const length = radius * 2.5;
+  const colors = ['red' ,  'green' , 'blue'];
+
+  dirs.map((dir, idx) => {
+    scene.add(new THREE.ArrowHelper(dir, origin, length, colors[idx], 0.2, 0.2));
+  })
+};
+Axes();
+
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
 camera.position.y = 2;
@@ -208,29 +220,29 @@ const transparentInput = document.getElementById("transparent");
 transparentInput.addEventListener("change", (e) => {
   if (transparentInput.checked) {
     cylinder.material = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff, 
-      opacity: 0.1, 
+      color: 0xffffff,
+      opacity: 0.1,
       transparent: true,
-      roughness: 0.2, 
+      roughness: 0.2,
       metalness: 0.8,
       refractionRatio: 0.98,
     });
-  }else{
-    cylinder.material = new THREE.MeshPhongMaterial({ color: document.getElementById("favcolor").value })
+  } else {
+    cylinder.material = new THREE.MeshPhongMaterial({ color: document.getElementById("favcolor").value });
   }
 });
 
 var textureLoader = new THREE.TextureLoader();
-document.getElementById('textureInput').addEventListener('change', function(event) {
-      var file = event.target.files[0];
-      if (!file) return;
+document.getElementById("textureInput").addEventListener("change", function(event) {
+  var file = event.target.files[0];
+  if (!file) return;
 
-      var reader = new FileReader();
-      reader.onload = function(event) {
-        var texture = textureLoader.load(event.target.result);
-        cylinder.material.color = null;
-        cylinder.material.map = texture;
-        cylinder.material.needsUpdate = true;
-      };
-      reader.readAsDataURL(file);
-    });
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var texture = textureLoader.load(event.target.result);
+    cylinder.material.color = null;
+    cylinder.material.map = texture;
+    cylinder.material.needsUpdate = true;
+  };
+  reader.readAsDataURL(file);
+});
