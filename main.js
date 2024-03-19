@@ -12,9 +12,10 @@ import FindSurfaces from "./src/FindSurfaces.js";
 let composer;
 
 let scene, camera, renderer, cylinder, controls;
-let textureCube, radiusDim, heightDim;
+let radiusDim, heightDim;
 let radiusNode, heightNode;
-let radius = height = 1;
+let radius = 1; 
+let height = 1;
 
 // let box;
 
