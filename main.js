@@ -89,6 +89,8 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
       new THREE.Vector3(e, heightDim_from.y * height, heightDim_from.z),
       new THREE.Vector3(e, heightDim_to.y * height, heightDim_to.z),
     );
+
+    gridHelper.position.y = -height / 2;
   });
 
   springAnimation(height, (e) => {
@@ -151,7 +153,10 @@ const Axes = () => {
     scene.add(new THREE.ArrowHelper(dir, origin, length, colors[idx], 0.2, 0.2));
   })
 };
-Axes();
+const gridHelper = new THREE.GridHelper()
+gridHelper.position.y = -height / 2;
+scene.add(gridHelper);
+// Axes();
 
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
