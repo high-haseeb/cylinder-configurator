@@ -14,7 +14,7 @@ let composer;
 let scene, camera, renderer, cylinder, controls;
 let radiusDim, heightDim;
 let radiusNode, heightNode;
-let radius = 1; 
+let radius = 1;
 let height = 1;
 
 // let box;
@@ -144,17 +144,18 @@ scene.background = new THREE.Color("white");
 lighting();
 
 const Axes = () => {
-  const dirs = [new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1)]
-  const origin = new THREE.Vector3(-1.4 * radius, -height/2, -1.4 * radius);
+  const dirs = [new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1)];
+  const origin = new THREE.Vector3(-1.4 * radius, -height / 2, -1.4 * radius);
   const length = radius * 2.5;
-  const colors = ['red' ,  'green' , 'blue'];
+  const colors = ["red", "green", "blue"];
 
   dirs.map((dir, idx) => {
     scene.add(new THREE.ArrowHelper(dir, origin, length, colors[idx], 0.2, 0.2));
-  })
+  });
 };
-const gridHelper = new THREE.GridHelper()
+const gridHelper = new THREE.GridHelper(10, 10, "blue", "blue");
 gridHelper.position.y = -height / 2;
+console.log(gridHelper);
 scene.add(gridHelper);
 // Axes();
 
@@ -187,7 +188,7 @@ function outline() {
 
   // Outline pass.
   customOutline = new CustomOutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-  composer.addPass(customOutline);
+  // composer.addPass(customOutline);
 
   // Antialias pass.
   const effectFXAA = new ShaderPass(FXAAShader);
