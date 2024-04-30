@@ -78,6 +78,9 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
   const radius = parseFloat(document.getElementById("radius").value);
   const height = parseFloat(document.getElementById("height").value);
 
+camera.position.z = Math.max(radius, height) * 2;
+  console.log(camera.position.z)
+
   springAnimation(radius, (e) => {
     cylinder.scale.setX(e);
     cylinder.scale.setZ(e);
@@ -187,7 +190,7 @@ function outline() {
   composer.addPass(new RenderPass(scene, camera));
 
   // Outline pass.
-  customOutline = new CustomOutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+  // customOutline = new CustomOutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
   // composer.addPass(customOutline);
 
   // Antialias pass.
@@ -196,7 +199,7 @@ function outline() {
   composer.addPass(effectFXAA);
   surfaceFinder = new FindSurfaces();
 
-  addSurfaceIdAttributeToMesh(cylinder);
+  // addSurfaceIdAttributeToMesh(cylinder);
 }
 
 function addSurfaceIdAttributeToMesh() {
